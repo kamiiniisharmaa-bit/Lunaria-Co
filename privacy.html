@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Lunaria & Co. | Privacy Policy</title>
+  <!-- Google Fonts: Plus Jakarta Sans (consistent with brand) -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #fffbf5;
+      color: #1b2b2b;
+      line-height: 1.5;
+    }
+
+    /* Brand color palette: deep fig + soft moss (identical to homepage & terms) */
+    :root {
+      --fig: #2a3b3b;
+      --fig-light: #3e5a5a;
+      --moss: #8faa8b;
+      --moss-light: #cbdcc6;
+      --warm-cream: #fef7e6;
+      --sand: #ede3d0;
+      --white: #ffffff;
+      --shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+      --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* Header / Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0;
+      flex-wrap: wrap;
+      gap: 20px;
+      border-bottom: 1px solid var(--sand);
+    }
+
+    .logo {
+      font-size: 1.9rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--fig) 0%, var(--fig-light) 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .logo span {
+      background: none;
+      color: var(--moss);
+      font-weight: 700;
+    }
+    .tagline {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--fig-light);
+      letter-spacing: 0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: var(--fig);
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--moss);
+    }
+    .icon-group {
+      display: flex;
+      gap: 1.2rem;
+    }
+    .icon-group i {
+      font-size: 1.3rem;
+      cursor: default;
+      color: var(--fig-light);
+    }
+
+    /* Privacy hero */
+    .privacy-hero {
+      background: linear-gradient(115deg, #eef3ea 0%, #fef7e6 100%);
+      border-radius: 48px;
+      margin: 48px 0 32px;
+      padding: 48px 56px;
+      text-align: center;
+    }
+    .privacy-hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--fig);
+      margin-bottom: 16px;
+    }
+    .privacy-hero p {
+      font-size: 1rem;
+      color: #4a5a5a;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+    .last-updated {
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: var(--fig-light);
+      background: rgba(143, 170, 139, 0.15);
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 60px;
+    }
+
+    /* Two-column layout */
+    .privacy-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      margin: 40px 0 60px;
+    }
+    .privacy-sidebar {
+      flex: 1.2;
+      min-width: 220px;
+    }
+    .privacy-main {
+      flex: 3;
+      min-width: 260px;
+    }
+
+    /* Sidebar card */
+    .sidebar-card {
+      background: var(--white);
+      border-radius: 32px;
+      padding: 28px 24px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--sand);
+      position: sticky;
+      top: 24px;
+    }
+    .sidebar-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--fig);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--moss-light);
+    }
+    .sidebar-nav {
+      list-style: none;
+    }
+    .sidebar-nav li {
+      margin-bottom: 14px;
+    }
+    .sidebar-nav a {
+      text-decoration: none;
+      color: #4a5e5e;
+      font-weight: 500;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+    }
+    .sidebar-nav a i {
+      color: var(--moss);
+      font-size: 0.8rem;
+      width: 20px;
+    }
+    .sidebar-nav a:hover {
+      color: var(--fig);
+      transform: translateX(4px);
+    }
+
+    /* Privacy sections */
+    .privacy-section {
+      background: var(--white);
+      border-radius: 32px;
+      padding: 32px 36px;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #f0e7db;
+      scroll-margin-top: 30px;
+    }
+    .privacy-section h2 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--fig);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .privacy-section h2 i {
+      color: var(--moss);
+      font-size: 1.6rem;
+    }
+    .privacy-section h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 24px 0 12px;
+      color: var(--fig-light);
+    }
+    .privacy-section p {
+      margin-bottom: 16px;
+      color: #2d3e3e;
+    }
+    .privacy-section ul, .privacy-section ol {
+      margin: 16px 0 20px 24px;
+      color: #2d3e3e;
+    }
+    .privacy-section li {
+      margin-bottom: 10px;
+    }
+    .highlight-box {
+      background: var(--warm-cream);
+      border-left: 4px solid var(--moss);
+      padding: 20px 24px;
+      border-radius: 20px;
+      margin: 24px 0;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: #fefaf2;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .data-table th, .data-table td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--sand);
+    }
+    .data-table th {
+      background: var(--moss-light);
+      color: var(--fig);
+      font-weight: 600;
+    }
+    hr {
+      margin: 24px 0;
+      border: none;
+      height: 1px;
+      background: var(--sand);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--fig);
+      color: #e2e2d6;
+      margin-top: 40px;
+      padding: 48px 0 28px;
+      border-radius: 40px 40px 0 0;
+    }
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .footer-col h4 {
+      color: var(--moss-light);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .footer-col p, .footer-col li {
+      font-size: 0.85rem;
+      line-height: 1.6;
+      list-style: none;
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 48px;
+      font-size: 0.75rem;
+      border-top: 1px solid rgba(203, 220, 198, 0.2);
+      padding-top: 24px;
+    }
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--fig);
+      color: white;
+      width: 48px;
+      height: 48px;
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: 0.2s;
+      z-index: 99;
+    }
+    .back-to-top:hover {
+      background: var(--fig-light);
+      transform: translateY(-3px);
+    }
+    @media (max-width: 780px) {
+      .container {
+        padding: 0 20px;
+      }
+      .privacy-hero {
+        padding: 32px 24px;
+      }
+      .privacy-hero h1 {
+        font-size: 2rem;
+      }
+      .privacy-section {
+        padding: 24px 20px;
+      }
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .privacy-grid {
+        flex-direction: column;
+      }
+      .sidebar-card {
+        position: static;
+      }
+      .data-table th, .data-table td {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Header: matching Lunaria brand -->
+  <div class="navbar">
+    <div>
+      <div class="logo">LUNARIA<span> & Co.</span></div>
+      <div class="tagline">· slow curation · wild essence ·</div>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+      <div class="icon-group">
+        <i class="far fa-heart"></i>
+        <i class="far fa-user"></i>
+        <i class="fas fa-bag-shopping"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- Privacy Hero -->
+  <div class="privacy-hero">
+    <h1>Privacy Policy</h1>
+    <p>Your trust is the foundation of our slow commerce ethos. We believe in radical transparency — here’s exactly how we collect, use, and protect your personal data.</p>
+    <div class="last-updated"><i class="far fa-calendar-alt"></i> Effective date: June 12, 2026</div>
+  </div>
+
+  <!-- Privacy Grid -->
+  <div class="privacy-grid">
+    <!-- Sidebar navigation -->
+    <div class="privacy-sidebar">
+      <div class="sidebar-card">
+        <h3><i class="fas fa-leaf"></i> Privacy hub</h3>
+        <ul class="sidebar-nav">
+          <li><a href="#intro"><i class="fas fa-info-circle"></i> Overview</a></li>
+          <li><a href="#data-collect"><i class="fas fa-database"></i> Data we collect</a></li>
+          <li><a href="#usage"><i class="fas fa-chart-line"></i> How we use data</a></li>
+          <li><a href="#sharing"><i class="fas fa-share-alt"></i> Sharing & disclosure</a></li>
+          <li><a href="#cookies"><i class="fas fa-cookie-bite"></i> Cookies & tracking</a></li>
+          <li><a href="#rights"><i class="fas fa-user-shield"></i> Your privacy rights</a></li>
+          <li><a href="#security"><i class="fas fa-lock"></i> Data security</a></li>
+          <li><a href="#children"><i class="fas fa-child"></i> Children's privacy</a></li>
+          <li><a href="#contact-privacy"><i class="fas fa-envelope"></i> Contact us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Main privacy content -->
+    <div class="privacy-main">
+      <!-- Section 1: Intro -->
+      <div id="intro" class="privacy-section">
+        <h2><i class="fas fa-seedling"></i> 1. Our commitment to privacy</h2>
+        <p>Lunaria & Co. ("we", "us", "our") operates the website <strong>lunaria.co</strong> (the "Site"). This Privacy Policy explains how we handle your information when you visit our Site, make a purchase, or interact with our brand. We are a small, independent studio that values ethical practices — your data will never be sold, rented, or exploited. </p>
+        <div class="highlight-box">
+          <i class="fas fa-heart" style="color: var(--moss); margin-right: 8px;"></i> <strong>Our promise:</strong> We only collect what we truly need to serve you better. No hidden agendas, no shady brokers.
+        </div>
+      </div>
+
+      <!-- Section 2: Data we collect -->
+      <div id="data-collect" class="privacy-section">
+        <h2><i class="fas fa-address-card"></i> 2. Information we collect</h2>
+        <p>We collect information to process orders, improve your experience, and communicate with you authentically. The categories include:</p>
+        <table class="data-table">
+          <thead>
+            <tr><th>Category</th><th>Examples</th><th>Legal basis (GDPR/CCPA)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Identity & contact</strong></td><td>Name, email, shipping address, phone (optional)</td><td>Contract performance, consent</td></tr>
+            <tr><td><strong>Order history</strong></td><td>Products purchased, transaction details, returns</td><td>Contract, legitimate interest</td></tr>
+            <tr><td><strong>Payment info</strong></td><td>Encrypted card details (processed via Stripe/PayPal, never stored on our servers)</td><td>Contract, legal obligation</td></tr>
+            <tr><td><strong>Browsing behavior</strong></td><td>IP address, device type, pages visited, referral source</td><td>Legitimate interest (site analytics)</td></tr>
+            <tr><td><strong>Communications</strong></td><td>Email inquiries, newsletter preferences, feedback</td><td>Consent, legitimate interest</td></tr>
+          </tbody>
+        </table>
+        <p>We do not collect sensitive personal data (e.g., health, biometric, or political information).</p>
+      </div>
+
+      <!-- Section 3: Usage -->
+      <div id="usage" class="privacy-section">
+        <h2><i class="fas fa-chart-simple"></i> 3. How we use your information</h2>
+        <p>Your data helps us create a seamless, mindful shopping experience. Specifically, we use it for:</p>
+        <ul>
+          <li><strong>Order fulfillment:</strong> Process payments, ship products, provide invoices and order confirmations.</li>
+          <li><strong>Customer support:</strong> Respond to inquiries, handle returns, and resolve issues with care.</li>
+          <li><strong>Improving our craft:</strong> Analyze browsing trends to enhance product curation and site functionality.</li>
+          <li><strong>Marketing (only with opt-in):</strong> Send occasional newsletters, early access offers, and journal posts if you subscribe. You can unsubscribe anytime.</li>
+          <li><strong>Legal compliance:</strong> Detect fraud, enforce our Terms, or comply with applicable laws.</li>
+        </ul>
+        <p>We never use automated decision-making or profiling that significantly affects you.</p>
+      </div>
+
+      <!-- Section 4: Sharing -->
+      <div id="sharing" class="privacy-section">
+        <h2><i class="fas fa-handshake"></i> 4. Sharing & third parties</h2>
+        <p>We do not sell or rent your personal information. However, we work with trusted partners who help operate our business, subject to strict confidentiality agreements:</p>
+        <ul>
+          <li><strong>Shipping carriers:</strong> USPS, UPS, DHL (to deliver your order).</li>
+          <li><strong>Payment processors:</strong> Stripe, PayPal, Shop Pay – they handle payment data securely.</li>
+          <li><strong>E-commerce platform:</strong> Shopify (hosting and order management).</li>
+          <li><strong>Analytics:</strong> Privacy-friendly analytics (Fathom or similar) to understand aggregate site usage without tracking individuals across the web.</li>
+        </ul>
+        <p>We may also disclose information if required by law (e.g., court order) or to protect the rights and safety of Lunaria & Co., our customers, or others.</p>
+      </div>
+
+      <!-- Section 5: Cookies -->
+      <div id="cookies" class="privacy-section">
+        <h2><i class="fas fa-cookie"></i> 5. Cookies & tracking technologies</h2>
+        <p>Our Site uses essential cookies to enable core functionality (like cart and checkout). We also use a small number of optional analytics cookies to understand how visitors interact with our pages — always anonymized and aggregated. You can manage cookie preferences via your browser settings. Disabling cookies may affect site performance.</p>
+        <div class="highlight-box">
+          🍪 <strong>Cookie-free zone:</strong> We never use tracking pixels from social media giants unless you explicitly consent. Your browsing stays peaceful.
+        </div>
+        <p>Third-party embeds (like product videos) may set their own cookies, but we limit external services to protect your privacy.</p>
+      </div>
+
+      <!-- Section 6: Your rights -->
+      <div id="rights" class="privacy-section">
+        <h2><i class="fas fa-user-check"></i> 6. Your privacy rights</h2>
+        <p>Depending on your location (including GDPR for EEA/UK and CCPA for California residents), you may have the following rights:</p>
+        <ul>
+          <li><strong>Access:</strong> Request a copy of the personal data we hold about you.</li>
+          <li><strong>Correction:</strong> Update inaccurate or incomplete information.</li>
+          <li><strong>Deletion:</strong> Ask us to erase your data (subject to legal obligations like tax records).</li>
+          <li><strong>Restriction/Opt-out:</strong> Limit processing or opt out of marketing communications.</li>
+          <li><strong>Data portability:</strong> Receive your data in a structured, machine-readable format.</li>
+        </ul>
+        <p>To exercise any right, email <strong>privacy@lunaria.co</strong>. We will respond within 30 days. We never discriminate against you for exercising privacy rights.</p>
+      </div>
+
+      <!-- Section 7: Security -->
+      <div id="security" class="privacy-section">
+        <h2><i class="fas fa-shield-haltered"></i> 7. Data security & retention</h2>
+        <p>We implement industry-standard safeguards including SSL encryption, secure servers, and restricted access to personal data. Only essential team members (founder + one operations lead) have access to order information.</p>
+        <p>We retain your data only as long as necessary: order records for 7 years (tax/legal compliance), newsletter data until you unsubscribe, and analytics for 14 months. After that, data is anonymized or deleted.</p>
+        <p>While no online transmission is 100% secure, we continuously update our practices to protect your information.</p>
+      </div>
+
+      <!-- Section 8: Children -->
+      <div id="children" class="privacy-section">
+        <h2><i class="fas fa-baby-carriage"></i> 8. Children's privacy</h2>
+        <p>Lunaria & Co. does not knowingly collect personal information from children under 16 years of age. Our products are designed for adults (home goods, apothecary, ceramics). If you believe a child has provided us with data, please contact us immediately and we will delete it.</p>
+      </div>
+
+      <!-- Section 9: Contact & updates -->
+      <div id="contact-privacy" class="privacy-section">
+        <h2><i class="fas fa-pen-fancy"></i> 9. Policy updates & contact</h2>
+        <p>This Privacy Policy may be updated occasionally to reflect changes in our practices or legal requirements. The "Effective date" at the top indicates the latest revision. We will notify you of material changes via email or a prominent notice on our Site.</p>
+        <p><strong>Questions, requests, or privacy concerns?</strong> We would love to hear from you:</p>
+        <p><i class="fas fa-envelope" style="color: var(--moss); width: 28px;"></i> <strong>Data protection officer / Privacy contact:</strong> <a href="mailto:privacy@lunaria.co" style="color: var(--fig);">privacy@lunaria.co</a><br>
+        <i class="fas fa-map-pin" style="color: var(--moss); width: 28px;"></i> <strong>Mail:</strong> Lunaria & Co. – Privacy, 143 Wildflower Lane, Portland, OR 97201<br>
+        <i class="fas fa-phone" style="color: var(--moss); width: 28px;"></i> <strong>Phone (privacy line):</strong> +1 (503) 555-8712</p>
+        <div class="highlight-box">
+          🌿 <strong>Transparency note:</strong> We are not a data-hungry corporation. We're a small team of makers and dreamers. Your trust means everything.
+        </div>
+        <p style="margin-top: 16px;">For unresolved privacy complaints, EU residents may contact their local Data Protection Authority. California residents may exercise CCPA rights using the email above.</p>
+      </div>
+      <p style="font-size: 0.75rem; text-align: right; color: #7f8c8c; margin-top: -10px;">Last reviewed: June 12, 2026 — Lunaria & Co. Privacy Charter v2.1</p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>LUNARIA & Co.</h4>
+        <p>Slow living emporium since 2021.<br>Ethical, artisanal, earth-first.</p>
+      </div>
+      <div class="footer-col">
+        
+    </div>
+    <div class="copyright">
+      © 2026 LUNARIA & Co. — all pieces made with intention. 🌿 | <a href="#" style="color: #cbdcc6; text-decoration: none;">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top button -->
+<div class="back-to-top" id="backToTop">
+  <i class="fas fa-arrow-up"></i>
+</div>
+
+<script>
+  // Smooth scrolling for sidebar links
+  document.querySelectorAll('.sidebar-nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId && targetId !== '#') {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          history.pushState(null, null, targetId);
+        }
+      }
+    });
+  });
+
+  // Back to top logic
+  const backBtn = document.getElementById('backToTop');
+  if (backBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backBtn.style.opacity = '1';
+        backBtn.style.visibility = 'visible';
+      } else {
+        backBtn.style.opacity = '0';
+        backBtn.style.visibility = 'hidden';
+      }
+    });
+    backBtn.style.transition = '0.2s';
+    backBtn.style.opacity = '0';
+    backBtn.style.visibility = 'hidden';
+    backBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // Simple demo interaction for header icons
+  const icons = document.querySelectorAll('.icon-group i');
+  icons.forEach(icon => {
+    icon.addEventListener('click', () => {
+      console.log('✨ Lunaria: icon clicked (demo experience)');
+    });
+  });
+</script>
+</body>
+</html>

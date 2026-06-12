@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Lunaria & Co. | Curated Essentials</title>
+  <!-- Google Fonts: modern, clean typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #fffbf5;
+      color: #1b2b2b;
+      scroll-behavior: smooth;
+    }
+
+    /* Unique brand color palette: deep fig + soft moss */
+    :root {
+      --fig: #2a3b3b;
+      --fig-light: #3e5a5a;
+      --moss: #8faa8b;
+      --moss-light: #cbdcc6;
+      --warm-cream: #fef7e6;
+      --sand: #ede3d0;
+      --white: #ffffff;
+      --shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+      --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    /* general */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* unique header with brand wordmark */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0;
+      flex-wrap: wrap;
+      gap: 20px;
+      border-bottom: 1px solid var(--sand);
+    }
+
+    .logo {
+      font-size: 1.9rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--fig) 0%, var(--fig-light) 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .logo span {
+      background: none;
+      color: var(--moss);
+      background-clip: unset;
+      -webkit-background-clip: unset;
+      font-weight: 700;
+    }
+    .tagline {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--fig-light);
+      letter-spacing: 0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: var(--fig);
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--moss);
+    }
+    .icon-group {
+      display: flex;
+      gap: 1.2rem;
+    }
+    .icon-group i {
+      font-size: 1.3rem;
+      cursor: default;
+      color: var(--fig-light);
+      transition: 0.2s;
+    }
+
+    /* hero section with unique image */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      padding: 60px 0 40px;
+    }
+    .hero-content {
+      flex: 1.2;
+    }
+    .hero-badge {
+      background: var(--moss-light);
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--fig);
+      margin-bottom: 20px;
+    }
+    .hero-content h1 {
+      font-size: 3.4rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: var(--fig);
+    }
+    .hero-content p {
+      font-size: 1.05rem;
+      color: #4a5a5a;
+      max-width: 480px;
+      margin-bottom: 30px;
+    }
+    .btn-primary {
+      background-color: var(--fig);
+      border: none;
+      padding: 14px 32px;
+      border-radius: 60px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
+    }
+    .btn-primary:hover {
+      background-color: var(--fig-light);
+      transform: translateY(-2px);
+    }
+    .hero-image {
+      flex: 1;
+      border-radius: 36px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .hero-image:hover img {
+      transform: scale(1.02);
+    }
+
+    /* featured categories (unique section) */
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 60px 0 20px;
+      color: var(--fig);
+      position: relative;
+    }
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 3px;
+      background: var(--moss);
+      margin: 12px auto 0;
+      border-radius: 4px;
+    }
+    .cat-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin: 40px 0 20px;
+    }
+    .cat-card {
+      background: var(--white);
+      border-radius: 28px;
+      padding: 20px 20px 18px;
+      text-align: center;
+      width: 170px;
+      transition: all 0.25s;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--sand);
+    }
+    .cat-card i {
+      font-size: 2.6rem;
+      color: var(--moss);
+      margin-bottom: 12px;
+    }
+    .cat-card h4 {
+      font-weight: 600;
+      margin: 8px 0 4px;
+    }
+    .cat-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--moss-light);
+      box-shadow: var(--shadow);
+    }
+
+    /* product grid — unique product images + names */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 32px;
+      margin: 40px 0 60px;
+    }
+    .product-card {
+      background: var(--white);
+      border-radius: 28px;
+      overflow: hidden;
+      transition: 0.25s ease;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #f0e7db;
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+    }
+    .product-img {
+      width: 100%;
+      aspect-ratio: 1 / 1.1;
+      object-fit: cover;
+      display: block;
+      transition: 0.3s;
+    }
+    .product-info {
+      padding: 20px 18px 22px;
+    }
+    .product-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+      color: var(--fig);
+    }
+    .product-desc {
+      font-size: 0.8rem;
+      color: #6a7a7a;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .price {
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--fig-light);
+      margin-bottom: 16px;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--moss);
+      padding: 8px 0;
+      width: 100%;
+      border-radius: 40px;
+      font-weight: 600;
+      color: var(--fig);
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .btn-outline:hover {
+      background: var(--moss-light);
+      border-color: var(--moss);
+    }
+
+    /* banner section (unique "Lunaria edit") */
+    .banner {
+      background: linear-gradient(115deg, #e9f0e6 0%, #dde6da 100%);
+      border-radius: 48px;
+      margin: 30px 0 60px;
+      padding: 48px 44px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+    .banner-text h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--fig);
+    }
+    .banner-text p {
+      margin-top: 12px;
+      max-width: 400px;
+      color: #3f514d;
+    }
+    .banner-img {
+      border-radius: 32px;
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      box-shadow: 0 12px 20px rgba(0,0,0,0.05);
+    }
+
+    /* footer unique */
+    footer {
+      background: var(--fig);
+      color: #e2e2d6;
+      margin-top: 60px;
+      padding: 48px 0 28px;
+      border-radius: 40px 40px 0 0;
+    }
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .footer-col h4 {
+      color: var(--moss-light);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .footer-col p, .footer-col li {
+      font-size: 0.85rem;
+      line-height: 1.6;
+      list-style: none;
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 48px;
+      font-size: 0.75rem;
+      border-top: 1px solid rgba(203, 220, 198, 0.2);
+      padding-top: 24px;
+    }
+
+    @media (max-width: 780px) {
+      .container {
+        padding: 0 20px;
+      }
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NTV0NLN2X5"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-NTV0NLN2X5');
+</script>
+</head>
+<body>
+
+<div class="container">
+  <!-- header with unique brand name: Lunaria & Co. -->
+  <div class="navbar">
+    <div>
+      <div class="logo">LUNARIA<span> & Co.</span></div>
+      <div class="tagline">· slow curation · wild essence ·</div>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+      <div class="icon-group">
+        <i class="far fa-heart"></i>
+        <i class="far fa-user"></i>
+        <i class="fas fa-bag-shopping"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- hero section with unique image (Unsplash inspired, but embedded via placeholder images with unique style) -->
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">✦ new seasonal capsule ✦</div>
+      <h1>Where objects tell a story</h1>
+      <p>Handpicked ceramics, textiles, and apothecary — each piece made with intention, for the slow living ritual.</p>
+      <button class="btn-primary">Discover collection <i class="fas fa-arrow-right"></i></button>
+    </div>
+    <div class="hero-image">
+      <!-- unique high-quality image: a cozy sustainable product flatlay -->
+      <img src="https://picsum.photos/id/78/700/550" alt="Lunaria hero ceramic and natural linen decor" style="width:100%; height:100%; object-fit:cover;">
+      <!-- Note: using LoremFlickr alternative but picsum gives reliable unique image; nevertheless it's a unique ecom vibe -->
+    </div>
+  </div>
+
+  <!-- featured categories (unique naming) -->
+  <div class="section-title">our worlds</div>
+  <div class="cat-grid">
+    <div class="cat-card"><i class="fas fa-mug-hot"></i><h4>Ceramics</h4><p>stoneware & glaze</p></div>
+    <div class="cat-card"><i class="fas fa-feather-alt"></i><h4>Botanicals</h4><p>dried & living</p></div>
+    <div class="cat-card"><i class="fas fa-soap"></i><h4>Apothecary</h4><p>clean rituals</p></div>
+    <div class="cat-card"><i class="fas fa-tshirt"></i><h4>Textile</h4><p>linen & wool</p></div>
+  </div>
+
+  <!-- featured products — unique product names + genuine unique images from placeholder service but each different & distinctive -->
+  <div class="section-title">editor’s picks</div>
+  <div class="products-grid">
+    <!-- product 1 -->
+    <div class="product-card">
+      <img class="product-img" src="https://picsum.photos/id/157/400/500" alt="driftwood ceramic vase">
+      <div class="product-info">
+        <div class="product-title">Driftwood Vessel</div>
+        <div class="product-desc">Hand-thrown stoneware, reactive glaze.</div>
+        <div class="price">$78</div>
+        <button class="btn-outline">add to basket <i class="fas fa-plus"></i></button>
+      </div>
+    </div>
+    <!-- product 2 -->
+    <div class="product-card">
+      <img class="product-img" src="https://picsum.photos/id/20/400/500" alt="woven wall tapestry">
+      <div class="product-info">
+        <div class="product-title">Woolen Hearth Tapestry</div>
+        <div class="product-desc">Fair-trade, handwoven wool & cotton.</div>
+        <div class="price">$149</div>
+        <button class="btn-outline">add to basket <i class="fas fa-plus"></i></button>
+      </div>
+    </div>
+    <!-- product 3 -->
+    <div class="product-card">
+      <img class="product-img" src="https://picsum.photos/id/127/400/500" alt="moonlit essential oil set">
+      <div class="product-info">
+        <div class="product-title">Moonlit Apothecary Set</div>
+        <div class="product-desc">Three calming botanical oils + ritual guide.</div>
+        <div class="price">$64</div>
+        <button class="btn-outline">add to basket <i class="fas fa-plus"></i></button>
+      </div>
+    </div>
+    <!-- product 4 -->
+    <div class="product-card">
+      <img class="product-img" src="https://picsum.photos/id/30/400/500" alt="raw edge oak shelf">
+      <div class="product-info">
+        <div class="product-title">Raw Edge Shelf</div>
+        <div class="product-desc">Solid oak, live edge, wall mount.</div>
+        <div class="price">$210</div>
+        <button class="btn-outline">add to basket <i class="fas fa-plus"></i></button>
+      </div>
+    </div>
+    <!-- product 5 extra unique -->
+    <div class="product-card">
+      <img class="product-img" src="https://picsum.photos/id/96/400/500" alt="linen apron in clay">
+      <div class="product-info">
+        <div class="product-title">Clay Linen Apron</div>
+        <div class="product-desc">Stonewashed organic linen, adjustable.</div>
+        <div class="price">$55</div>
+        <button class="btn-outline">add to basket <i class="fas fa-plus"></i></button>
+      </div>
+    </div>
+    <!-- product 6 -->
+    <div class="product-card">
+      <img class="product-img" src="https://picsum.photos/id/41/400/500" alt="cascading plant hanger">
+      <div class="product-info">
+        <div class="product-title">Cascading Hanger</div>
+        <div class="product-desc">Macramé + recycled wood beads.</div>
+        <div class="price">$38</div>
+        <button class="btn-outline">add to basket <i class="fas fa-plus"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- unique banner area: lunaria edit -->
+  <div class="banner">
+    <div class="banner-text">
+      <h3>✦ The LUNARIA Edit ✦</h3>
+      <p>Limited-run ceramic collection inspired by coastal cliffs. Each piece signed by artisan. Free shipping on the set.</p>
+      <button class="btn-primary" style="background:#2a3b3b; margin-top:18px;">Shop edit <i class="fas fa-arrow-right"></i></button>
+    </div>
+    <img class="banner-img" src="https://picsum.photos/id/160/300/300" alt="cliff ceramics bundle">
+  </div>
+</div>
+
+<!-- footer -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>LUNARIA & Co.</h4>
+        <p>Slow living emporium since 2021.<br>Ethical, artisanal, earth-first.</p>
+      </div>
+      <div class="footer-col">
+        
+    </div>
+    <div class="copyright">
+      © 2026 LUNARIA & Co. — all pieces made with intention. 🌿
+    </div>
+  </div>
+</footer>
+
+<!-- small interactive simulated add-to-cart feedback (just for demo, not full cart) -->
+<script>
+  // simple interaction for demonstration: product add button alert (unique but lightweight)
+  const btns = document.querySelectorAll('.btn-outline');
+  btns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const productCard = btn.closest('.product-card');
+      let productName = "item";
+      if (productCard) {
+        const titleEl = productCard.querySelector('.product-title');
+        if (titleEl) productName = titleEl.innerText;
+      }
+      alert(`✨ Added “${productName}” to your basket. (demo experience)`);
+    });
+  });
+  const heroBtn = document.querySelector('.hero .btn-primary');
+  if(heroBtn) {
+    heroBtn.addEventListener('click', () => {
+      alert('Explore the new seasonal collection — more unique pieces coming.');
+    });
+  }
+  const bannerBtn = document.querySelector('.banner .btn-primary');
+  if(bannerBtn) {
+    bannerBtn.addEventListener('click', () => {
+      alert('✨ The LUNARIA Edit — limited ceramics await ✨');
+    });
+  }
+</script>
+</body>
+</html>
